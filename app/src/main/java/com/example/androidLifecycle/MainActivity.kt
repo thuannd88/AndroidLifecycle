@@ -1,14 +1,17 @@
 package com.example.androidLifecycle
 
+import MyLifecycleObserverDev1
+import MyLifecycleObserverDev2
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 
 class MainActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        Log.d("MainAct222","OnCreate called")
+        supportFragmentManager.beginTransaction().add(R.id.frameLayout,FirstFragment()).commit()
     }
 
     override fun onStart() {
